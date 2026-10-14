@@ -13,9 +13,11 @@
             margin: 0 auto; 
             padding: 40px 20px; 
             
-            /* Displays your specific Greek Pillar & Mountain landscape scene */
-            background-image: url('https://freepik.com');
+            /* Background image: background.jpg must sit in the same folder as this file */
+            background-color: #c9a574; /* warm fallback while the image loads */
+            background-image: url('background.jpg');
             background-size: cover;
+            background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center top;
             color: #1a1a1a; 
@@ -101,6 +103,13 @@
             margin-top: 60px;
             letter-spacing: 1px;
             text-transform: uppercase;
+        }
+
+        /* iOS Safari ignores background-attachment: fixed, so use a scrolling background on small screens */
+        @media (max-width: 768px) {
+            body { background-attachment: scroll; }
+            .glass-container { padding: 25px; }
+            .poem { padding: 25px; }
         }
     </style>
 </head>
